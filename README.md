@@ -29,15 +29,15 @@ The simulation demonstrates how voltage is adjusted proportionally with frequenc
 
 ## System Architecture
 
-Main blocks in the model:
+The simulation model consists of the following main blocks:
 
-- Three-phase source  
-- Diode rectifier  
-- DC link  
-- Inverter  
+- Three-phase AC source  
+- Diode bridge rectifier  
+- DC link capacitor  
+- Three-phase voltage source inverter  
 - PWM/SVPWM controller  
-- LC filter  
-- Induction motor  
+- LC output filter  
+- Three-phase squirrel cage induction motor  
 
 ---
 
@@ -52,10 +52,10 @@ Main blocks in the model:
 ![PWM Subsystem](docs/pwm_subsystem.png)
 
 This subsystem generates:
-- Frequency signal  
-- Modulation index  
-- 3-phase sine references  
-- PWM/SVPWM switching pulses  
+- Reference frequency signal  
+- Modulation index calculation  
+- Three-phase sinusoidal reference signals  
+- PWM/SVPWM switching pulses for inverter control  
 
 ---
 
@@ -74,13 +74,13 @@ This keeps motor flux constant and prevents saturation.
 
 ## Simulation Inputs
 
-| Parameter | Value |
-|----------|------|
-Initial frequency | 50 Hz  
-Final frequency | 10 Hz  
-Step time | 1 s  
-Load torque | 10 Nm  
-PWM frequency | 5 kHz  
+| Parameter         | Value  |
+|-------------------|--------|
+| Initial frequency | 50 Hz  |
+| Final frequency   | 10 Hz  |
+| Step time         | 1 s    |
+| Load torque       | 10 Nm  |
+| PWM frequency     | 5 kHz  |  
 
 ---
 
@@ -103,13 +103,13 @@ PWM frequency | 5 kHz
 
 ## SPWM vs SVPWM
 
-| Feature | SPWM | SVPWM |
-|--------|------|------|
-Voltage utilization | Lower | Higher |
-THD | Higher | Lower |
-Efficiency | Moderate | Better |
+| Feature              | SPWM     | SVPWM   |
+|---------------------|----------|---------|
+| Voltage utilization | Lower    | Higher  |
+| THD                 | Higher   | Lower   |
+| Efficiency          | Moderate | Better  |
 
-SVPWM gives smoother output and better DC bus utilization.
+SVPWM provides smoother output and better DC bus utilization.
 
 ---
 
@@ -126,36 +126,70 @@ This reduces switching ripple.
 
 ---
 
-## Project Structure (Inside Repository)
+## Project Structure
+
+```
 VFD_Simulink_Project/
 │
-├── VFD.slx # Main Simulink model
-├── PWM_Modulation.slx # PWM subsystem model
-├── README.md # Documentation
+├── VFD.slx                  # Main Simulink model
+├── PWM_Modulation.slx       # PWM subsystem model
+├── README.md                # Project documentation
 │
-└── docs/ # Images used in README
-├── main_model.png
-├── pwm_subsystem.png
-├── rotor_speed.png
-├── phase_voltage.png
-└── frequency.png
+└── docs/                    # Documentation assets
+    ├── main_model.png       # Main system architecture diagram
+    ├── pwm_subsystem.png    # PWM modulation subsystem
+    ├── rotor_speed.png      # Rotor speed simulation results
+    ├── phase_voltage.png    # Three-phase voltage waveforms
+    └── frequency.png        # Frequency input signal
+```
 
+
+## Prerequisites
+
+Before running this project, ensure you have the following installed:
+
+- **MATLAB** (R2018b or later recommended)
+- **Simulink**
+- **Simscape Electrical** toolbox
+
+---
 
 ## How to Run
-1. Open MATLAB  
-2. Open `VFD.slx`  
-3. Run simulation  
-4. Change frequency step values  
-5. Toggle between PWM & SVPWM  
-6. Observe scopes  
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/YourUsername/VFD_Simulink_Project.git
+   cd VFD_Simulink_Project
+   ```
+
+2. **Open MATLAB:**
+   Launch MATLAB on your system.
+
+3. **Load the Simulink model:**
+   Open the main model file `VFD.slx`.
+
+4. **Run the simulation:**
+   Click the "Run" button in Simulink to start the simulation.
+
+5. **Modify parameters (optional):**
+   - Adjust frequency step values in the model
+   - Toggle between PWM and SVPWM modes
+   - Change load torque or other parameters
+
+6. **Observe results:**
+   View the simulation results in the scope blocks for:
+   - Rotor speed
+   - Phase voltages
+   - Frequency response  
 
 ---
 
 ## Learning Outcomes
-- V/f motor control  
-- PWM & SVPWM comparison  
-- Induction motor modeling  
-- Power electronics simulation  
+
+- Understanding V/f motor control principles  
+- Comparative analysis of PWM and SVPWM techniques  
+- Induction motor modeling and simulation  
+- Power electronics circuit design and implementation  
 
 ---
 
@@ -168,10 +202,12 @@ VFD_Simulink_Project/
 ---
 
 ## Author
-Priyanshu Nayak  
+
+**Priyanshu Nayak**  
 B.Tech Electrical Engineering  
 
 ---
 
 ## License
-For academic and educational use.
+
+This project is intended for academic and educational purposes.
