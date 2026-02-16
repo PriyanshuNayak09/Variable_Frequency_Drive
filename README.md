@@ -1,6 +1,6 @@
-# ⚡ V/F Controlled Induction Motor Drive using PWM & SVPWM (MATLAB/Simulink)
+# V/F Controlled Induction Motor Drive using PWM & SVPWM (MATLAB/Simulink)
 
-## 📌 Project Overview
+## Project Overview
 This project models a **Variable Frequency Drive (VFD)** for a three-phase induction motor using MATLAB/Simulink.  
 It implements **V/f control** and compares:
 
@@ -11,7 +11,7 @@ The simulation demonstrates how voltage is adjusted proportionally with frequenc
 
 ---
 
-## 🎯 Objectives
+## Objectives
 - Build a rectifier–inverter VFD model  
 - Implement constant V/f control  
 - Compare SPWM and SVPWM  
@@ -20,14 +20,14 @@ The simulation demonstrates how voltage is adjusted proportionally with frequenc
 
 ---
 
-## 🧰 Tools Used
+## Tools Used
 - MATLAB  
 - Simulink  
 - Simscape Electrical  
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 Main blocks in the model:
 
@@ -41,13 +41,13 @@ Main blocks in the model:
 
 ---
 
-## 🖥️ Main Simulink Model
+## Main Simulink Model
 
 ![Main Model](docs/main_model.png)
 
 ---
 
-## 🔁 PWM Modulation Subsystem
+## PWM Modulation Subsystem
 
 ![PWM Subsystem](docs/pwm_subsystem.png)
 
@@ -59,7 +59,7 @@ This subsystem generates:
 
 ---
 
-## ⚙️ V/f Control Principle
+## V/f Control Principle
 
 \[
 V \propto f
@@ -72,7 +72,7 @@ This keeps motor flux constant and prevents saturation.
 
 ---
 
-## 📉 Simulation Inputs
+## Simulation Inputs
 
 | Parameter | Value |
 |----------|------|
@@ -84,24 +84,24 @@ PWM frequency | 5 kHz
 
 ---
 
-## 📊 Simulation Results
+## Simulation Results
 
-### 🟢 Rotor Speed
+### Rotor Speed
 ![Rotor Speed](docs/rotor_speed.png)
 
 ---
 
-### 🔵 Three-Phase Voltage
+### Three-Phase Voltage
 ![Voltage](docs/phase_voltage.png)
 
 ---
 
-### 🟡 Frequency Input
+### Frequency Input
 ![Frequency](docs/frequency.png)
 
 ---
 
-## 🔄 SPWM vs SVPWM
+## SPWM vs SVPWM
 
 | Feature | SPWM | SVPWM |
 |--------|------|------|
@@ -113,7 +113,7 @@ SVPWM gives smoother output and better DC bus utilization.
 
 ---
 
-## 🔧 Output Filter Used
+## Output Filter Used
 
 Series RL:
 - R = 0.5 Ω  
@@ -126,7 +126,7 @@ This reduces switching ripple.
 
 ---
 
-## 📁 Project Structure (Inside Repository)
+## Project Structure (Inside Repository)
 VFD_Simulink_Project/
 │
 ├── VFD.slx # Main Simulink model
@@ -141,7 +141,7 @@ VFD_Simulink_Project/
 └── frequency.png
 
 
-## ▶️ How to Run
+## How to Run
 1. Open MATLAB  
 2. Open `VFD.slx`  
 3. Run simulation  
@@ -151,7 +151,7 @@ VFD_Simulink_Project/
 
 ---
 
-## 🧠 Learning Outcomes
+## Learning Outcomes
 - V/f motor control  
 - PWM & SVPWM comparison  
 - Induction motor modeling  
@@ -159,7 +159,7 @@ VFD_Simulink_Project/
 
 ---
 
-## 🚀 Future Improvements
+## Future Improvements
 - Closed-loop speed control  
 - Field-oriented control  
 - Hardware prototype  
@@ -167,11 +167,11 @@ VFD_Simulink_Project/
 
 ---
 
-## 👨‍💻 Author
+## Author
 Priyanshu Nayak  
 B.Tech Electrical Engineering  
 
 ---
 
-## 📜 License
+## License
 For academic and educational use.
